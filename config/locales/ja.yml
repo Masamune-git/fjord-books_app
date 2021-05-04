@@ -1,0 +1,10 @@
+ja:
+  title: "タイトル"
+  memo: "メモ"
+  author: "著者"
+  picture: "画像"
+  show: "表示"
+  edit: "編集"
+  destroy: "削除"
+  new_book: "新規"
+  back: "戻る"
