@@ -2,5 +2,5 @@
 
 <%= render 'form', book: @book %>
 
-<%= link_to Book.human_attribute_name(:destroy), @book %> |
-<%= link_to Book.human_attribute_name(:show), books_path %>
+<%= link_to t('destroy'), @book %> |
+<%= link_to t('show'), books_path %>
