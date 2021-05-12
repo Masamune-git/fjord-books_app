@@ -16,3 +16,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:self_introduction])
   end
 end
+
+def after_sign_in_path_for(_resource_or_scope)
+  books_path
+end
