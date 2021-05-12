@@ -221,6 +221,10 @@ ja:
       previous: "前"
       next: "次"
       truncate: "..."
+    users_index:
+    users_show:
+      title: ユーザー情報
+      back: 戻る
     users_edit:
       edit: 編集
       pass_message: 変更しない場合は空白のままでお願いいたします
@@ -238,6 +242,8 @@ ja:
       logout: ログアウト
       sign_up: サインアップ
       login: ログイン
+      index: ユーザー一覧
+      top: トップ
     sessions:
       log_in: ログイン
     shared:

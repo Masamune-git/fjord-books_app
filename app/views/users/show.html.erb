@@ -1,2 +1,15 @@
-<% provide(:title, @user.email) %>
-<h1>My page (<%= @user.email %>)</h1>
+<h2><%=t('views.users_show.title')%></h1>
+
+  <tr>
+    <th><%= User.human_attribute_name(:email) %></th><br />
+    <th></th><%= @user.email %><th></th><br /><br />
+    <th><%= User.human_attribute_name(:postcode) %></th><br />
+    <th></th><%= @user.postcode %><th></th><br /><br />
+    <th><%= User.human_attribute_name(:address_city) %></th><br />
+    <th></th><%= @user.address_city %><th></th><br /><br />
+    <th><%= User.human_attribute_name(:self_introduction) %></th><br />
+    <th></th><%= @user.self_introduction %><th></th><br /><br />
+
+  </tr>
+
+  <%= link_to t('views.users_show.back'), users_path %>
