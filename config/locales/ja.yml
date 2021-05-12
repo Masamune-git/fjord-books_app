@@ -222,6 +222,7 @@ ja:
       next: "次"
       truncate: "..."
     users_index:
+      title: ユーザー一覧
     users_show:
       title: ユーザー情報
       back: 戻る
