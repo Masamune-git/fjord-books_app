@@ -6,4 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :trackable
+  def self.create_unique_string
+    SecureRandom.uuid
+  end
 end
