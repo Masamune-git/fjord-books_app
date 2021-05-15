@@ -5,8 +5,23 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, :trackable
+         :omniauthable, omniauth_providers: %i(github)
+
   def self.create_unique_string
     SecureRandom.uuid
+  end
+  
+  def self.find_for_github_oauth(auth, signed_in_resource=nil)
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
+    unless user
+      user = User.new(provider: auth.provider,
+                      uid:      auth.uid,
+                      name:     auth.info.name,
+                      email:    auth.info.email,
+                      password: Devise.friendly_token[0, 20]
+      )
+    end
+    user.save
+    user
   end
 end
