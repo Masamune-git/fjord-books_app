@@ -23,5 +23,7 @@
 </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-<a href="http://localhost:3000/letter_opener">letter_opener</a>
+<% if Rails.env.development? %>
+  <%= render "devise/shared/links" %>
+  <a href="http://localhost:3000/letter_opener">letter_opener</a>
+<% end %>
