@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   protected
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -60,7 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  def build_resource(hash={})
+  def build_resource(hash = {})
     hash[:uid] = User.create_unique_string
     super
   end
@@ -76,5 +77,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
       super
     end
   end
-
 end
