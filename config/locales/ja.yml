@@ -261,6 +261,13 @@ ja:
       change_pass: パスワードの変更
       new_pass: 新しいパスワード
       confirm_pass: パスワード確認
+    mailer:
+      reset_pass:
+        hello: こんにちは
+        line1: パスワードを変更するためのリンクをリクエストしました。以下のリンクを使って変更できます。
+        change_pass: パスワードを変更する
+        line3: リクエストしていない場合は、このメールを無視してください
+        line4: 上記のリンクにアクセスして新しいパスワードを作成するまで、パスワードは変更されません
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
