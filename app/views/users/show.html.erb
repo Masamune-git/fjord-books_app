@@ -1,14 +1,14 @@
 <h2><%=t('views.users_show.title')%></h2>
 
-<tr>
-  <th><%= User.human_attribute_name(:email) %></th><br />
-  <th></th><%= @user.email %><th></th><br /><br />
-  <th><%= User.human_attribute_name(:postcode) %></th><br />
-  <th></th><%= @user.postcode %><th></th><br /><br />
-  <th><%= User.human_attribute_name(:address_city) %></th><br />
-  <th></th><%= @user.address_city %><th></th><br /><br />
-  <th><%= User.human_attribute_name(:self_introduction) %></th><br />
-  <th></th><%= @user.self_introduction %><th></th><br /><br />
-</tr>
+<dl class="user_show">
+  <dt><%= User.human_attribute_name(:email) %></dt>
+  <dd><%= @user.email %></dt>
+  <dt><%= User.human_attribute_name(:postcode) %></dt>
+  <dd><%= @user.postcode %></dt>
+  <dt><%= User.human_attribute_name(:address_city) %></dt>
+  <dd><%= @user.address_city %></dt>
+  <dt><%= User.human_attribute_name(:self_introduction) %></dt>
+  <dd><%= @user.self_introduction %></dt>
+</dl>
 
 <%= link_to t('views.users_show.back'), users_path %>
