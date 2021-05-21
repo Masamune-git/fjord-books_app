@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: "users/registrations" 
   }
-  root to: 'oauth_test#index'
+  root to: 'books#index'
   resources :books
   resources :users, only: %i(index show)
 end
