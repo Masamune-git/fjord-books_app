@@ -226,9 +226,11 @@ ja:
       truncate: '...'
     users:
       show_follow:
-        title_following: "%{name}さんがフォロー中のユーザー"
+        title_followings: "%{name}さんがフォロー中のユーザー"
         title_followers: "%{name}さんのフォロワー"
       show:
+        followings: フォロー
+        folower : フォロワー
         follow : フォロー
         unfollow : フォロー解除
   controllers:
