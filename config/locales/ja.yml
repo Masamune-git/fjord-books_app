@@ -228,6 +228,9 @@ ja:
       show_follow:
         title_following: "%{name}さんがフォロー中のユーザー"
         title_followers: "%{name}さんのフォロワー"
+      show:
+        follow : フォロー
+        unfollow : フォロー解除
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
