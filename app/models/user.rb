@@ -21,8 +21,6 @@ class User < ApplicationRecord
                                    dependent: :destroy,
                                    inverse_of: :follower
 
-  
-
   has_many :followers, through: :passive_relationships, source: :following
 
   def self.from_omniauth(auth)
