@@ -1,4 +1,14 @@
-<h1>Reports#show</h1>
-<p>Find me in app/views/reports/show.html.erb</p>
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
 
-<p><span>日報: </span><%= @report.body %></p>
+<p>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:body) %>:</strong>
+  <%=simple_format @report.body %>
+</p>
+
+<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<%= link_to t('views.common.back'), reports_path %>
