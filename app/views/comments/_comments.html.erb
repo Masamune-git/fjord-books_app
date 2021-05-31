@@ -1,0 +1,15 @@
+<div class="comments-container">
+  <strong><%= Comment.model_name.human %>:</strong>
+  <% commentable.comments.order(:id).each do |comment| %>
+    <ul>
+        <li>
+          <%= comment.body %>          
+        </li>
+    </ul>
+  <% end %>
+
+  <%= form_with model: [commentable, commentable.comments.new], local: true do |f| %>
+    <%= f.text_field :body, required: true %>
+    <%= f.submit t('views.common.create') %>
+  <% end %>
+</div>

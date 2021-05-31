@@ -26,6 +26,7 @@ class ReportsController < ApplicationController
 
   def destroy
     @report.destroy
+    redirect_to reports_path
   end
 
   def update
