@@ -219,6 +219,9 @@ ja:
       sign_out: ログアウト
       create: 作成
       minimum_length: "%{length}文字以上"
+      contributor: 投稿者
+      contributor_email: 投稿者(e-mail)
+      posted_time: 投稿日
     pagination:
       first: '最初'
       last: '最後'

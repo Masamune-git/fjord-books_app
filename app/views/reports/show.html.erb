@@ -1,15 +1,29 @@
 <h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+<div class = report_container>
+  <p>
+    <strong><%= Report.human_attribute_name(:title) %>:</strong>
+    <%= @report.title %>
+  </p>
 
-<p>
-  <strong><%= Report.human_attribute_name(:title) %>:</strong>
-  <%= @report.title %>
-</p>
+  <p>
+    <strong><%= Report.human_attribute_name(:body) %>:</strong>
+    <%=simple_format @report.body %>
+  </p>
 
-<p>
-  <strong><%= Report.human_attribute_name(:body) %>:</strong>
-  <%=simple_format @report.body %>
-</p>
-
+  <p>
+    <small>
+      <% if @report.user.name.present? %>
+        <%= t('views.common.contributor') %>:
+        <%= @report.user.name %> |
+      <% else %>
+        <%= t('views.common.contributor_email') %>:
+        <%= @report.user.email %> |
+      <% end %>
+      <%= t('views.common.posted_time') %>:
+      <%= @report.created_at %>
+    </small>
+  </p>
+</div>
 <%= render 'comments/comments', commentable: @report %>
 
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
