@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[edit update destroy]
-
+  before_action :authenticate_user!, only: %i[edit destroy]
   def new
     @report = Report.new
   end
