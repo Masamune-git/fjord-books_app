@@ -20,7 +20,7 @@
         <%= @report.user.email %> |
       <% end %>
       <%= t('views.common.posted_time') %>:
-      <%= @report.created_at %>
+      <%= @report.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
     </small>
   </p>
 </div>
