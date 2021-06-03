@@ -6,7 +6,7 @@ class Reports::CommentsController < ApplicationController
     comment = report.comments.build(comment_params)
     comment.user = current_user
     comment.save
-    redirect_to report
+    redirect_to report_path(report)
   end
 
   private

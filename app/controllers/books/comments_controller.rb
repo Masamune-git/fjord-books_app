@@ -6,7 +6,7 @@ class Books::CommentsController < ApplicationController
     comment = book.comments.build(comment_params)
     comment.user = current_user
     comment.save
-    redirect_to book
+    redirect_to book_path(book)
   end
 
   private
