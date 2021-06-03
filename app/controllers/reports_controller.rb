@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[edit update destroy]
   before_action :authenticate_user!, only: %i[edit destroy]
@@ -5,7 +7,7 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def edit; 
+  def edit
     @report = Report.find(params[:id])
   end
 
@@ -38,7 +40,7 @@ class ReportsController < ApplicationController
   end
 
   private
-  
+
   def set_report
     @report = current_user.reports.find(params[:id])
   end
