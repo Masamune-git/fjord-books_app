@@ -68,10 +68,10 @@ User.transaction do
   end
 end
 
-# User.order(:id).each do |user|
-#   image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
-#   user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
-# end
+User.order(:id).each do |user|
+  image_url = Faker::Avatar.image(slug: user.email, size: '150x150')
+  user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
+end
 
 # User.destroy_all で全件削除されているはずだが念のため
 Relationship.destroy_all
