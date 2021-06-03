@@ -230,7 +230,9 @@ ja:
         title_followers: "%{name}さんのフォロワー"
       show:
         followings: フォロー
-        folower : フォロワー
+        following_count: "フォロー%{count}"
+        folower: フォロワー
+        follower_count: "フォロワー%{count}"
         follow : フォロー
         unfollow : フォロー解除
   controllers:
