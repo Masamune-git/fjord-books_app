@@ -3,7 +3,7 @@
   <a href="<%= followings_user_path(@user) %>">
     <%= t('views.users.show.followings') %>
     <strong class="stat">
-      <%= @user.following.count %>
+      <%= @user.followings.count %>
     </strong>
   </a>
   <a href="<%= followers_user_path(@user) %>">
