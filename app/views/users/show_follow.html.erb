@@ -1,7 +1,7 @@
-<% if @title ==  "Followings" %>
+<% if controller.action_name ==  "followings" %>
 <% users = @following_users %>
   <h1><%= t('views.users.show_follow.title_followings', name: @user.name) %></h1>
-<% elsif @title ==  "Followers" %>  
+<% elsif controller.action_name ==  "followers" %>  
   <% users = @follower_users %>
 <h1><%= t('views.users.show_follow.title_followers', name: @user.name) %></h1>
 <% end %>
