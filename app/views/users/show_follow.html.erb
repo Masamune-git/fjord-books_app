@@ -1,6 +1,8 @@
 <% if @title ==  "Followings" %>
+<% users = @following_users %>
   <h1><%= t('views.users.show_follow.title_followings', name: @user.name) %></h1>
 <% elsif @title ==  "Followers" %>  
+  <% users = @follower_users %>
 <h1><%= t('views.users.show_follow.title_followers', name: @user.name) %></h1>
 <% end %>
 
@@ -20,7 +22,7 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% users.each do |user| %>
       <tr>
         <th>
           <% if user.avatar.attached? %>
@@ -37,6 +39,6 @@
   </tbody>
 </table>
 
-<%= paginate @users %>
+<%= paginate users %>
 
 
