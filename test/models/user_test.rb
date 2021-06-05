@@ -3,15 +3,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  setup do
-    @me = User.create!(email: "me@example.com", password: "password")
-    @she = User.create!(email: "she@example.com", password: "password")
-  end
-
-
+  
   test "#name_or_email" do  
     user = User.new(email: "foo@example.com", name: "")
     assert_equal "foo@example.com", user.name_or_email
@@ -44,4 +36,8 @@ class UserTest < ActiveSupport::TestCase
     assert @she.followed_by?(@me)
   end
 
+  test "#self.from_omniauth" do  
+    
+    assert github_mock
+  end
 end
