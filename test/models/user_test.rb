@@ -36,8 +36,10 @@ class UserTest < ActiveSupport::TestCase
     assert @she.followed_by?(@me)
   end
 
-  test "#self.from_omniauth" do  
-    
-    assert github_mock
+  test "#self.from_omniauth" do
+    user = User.from_omniauth(github_mock)      
+    assert_equal "hoge", user.name
+    assert_equal "hoge@example.com", user.email
+    assert user.password.present?
   end
 end

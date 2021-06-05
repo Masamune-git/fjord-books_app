@@ -4,6 +4,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
+OmniAuth.config.test_mode = true
+
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
@@ -19,18 +21,13 @@ class ActiveSupport::TestCase
   end
 
   def github_mock
-    return true
-    # OmniAuth.config.test_mode = true
-    # OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-    #   :provider => "github",
-    #   :uid => "123456",
-    #   :info => {
-    #     :name => "bar",
-    #     :email => "bar@example.com"
-    #   }
-    # }) 
-    # request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
-
-    # @user = User.from_omniauth(request.env['omniauth.auth'])
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+      :provider => "github",
+      :uid => "123456",
+      :info => {
+        :name => "hoge",
+        :email => "hoge@example.com"
+      }
+    }) 
   end
 end
