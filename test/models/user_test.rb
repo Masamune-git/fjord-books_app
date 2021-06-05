@@ -33,11 +33,13 @@ class UserTest < ActiveSupport::TestCase
   test '#following?' do
     Relationship.create!(following_id: @bob.id, follower_id: @alice.id)
     assert @alice.following?(@bob)
+    assert_not @bob.following?(@alice)
   end
 
   test '#followed_by?' do
     Relationship.create!(following_id: @bob.id, follower_id: @alice.id)
     assert @bob.followed_by?(@alice)
+    assert_not @alice.followed_by?(@bob)
   end
 
   test '#self.from_omniauth' do
