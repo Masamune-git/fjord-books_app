@@ -15,19 +15,16 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 
-  setup do
-    @me = User.create!(email: "me@example.com", password: "password")
-    @she = User.create!(email: "she@example.com", password: "password")
-  end
-
   def github_mock
-    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-      :provider => "github",
-      :uid => "123456",
-      :info => {
-        :name => "hoge",
-        :email => "hoge@example.com"
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+      {
+        provider: 'github',
+        uid: '123456',
+        info: {
+          name: 'hoge',
+          email: 'hoge@example.com'
+        }
       }
-    }) 
+    )
   end
 end
