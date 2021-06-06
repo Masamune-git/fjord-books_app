@@ -5,8 +5,3 @@ alice_report:
   title: アリスの日報
   content: 勉強したよ
   id: 1
-
-# two:
-#   user: two
-#   title: MyString
-#   content: MyText
