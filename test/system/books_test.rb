@@ -8,7 +8,7 @@ class BooksTest < ApplicationSystemTestCase
     visit root_url
     fill_in 'Eメール', with: 'alice@example.com'
     fill_in 'パスワード', with: 'password'
-    
+
     click_button 'ログイン'
   end
 
@@ -24,14 +24,13 @@ class BooksTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
     assert_text '新しい日報です'
     assert_text 'おはようございます'
-    
   end
 
   test 'updating a Report' do
     visit root_url
     click_on '日報'
     click_link '編集', href: edit_report_path(@report)
-    
+
     assert_selector 'h1', text: '日報の編集'
 
     fill_in 'タイトル', with: '編集した日報です'
@@ -43,12 +42,13 @@ class BooksTest < ApplicationSystemTestCase
     assert_text 'ご飯を食べた'
   end
 
-  # test 'destroying a Book' do
-  #   visit books_url
-  #   page.accept_confirm do
-  #     click_on 'Destroy', match: :first
-  #   end
+  test 'destroying a Report' do
+    visit root_url
+    click_on '日報'
 
-  #   assert_text 'Book was successfully destroyed'
-  # end
+    page.accept_confirm do
+      click_link '削除'
+    end
+    assert_text '日報が削除されました。'
+  end
 end
