@@ -51,13 +51,4 @@ class BooksTest < ApplicationSystemTestCase
     end
     assert_text '日報が削除されました。'
   end
-
-  test 'Question' do
-    visit root_url
-    click_on '日報'
-    assert_css 'h1', text: '日報' # ←追加
-    click_on '編集' 
-    assert_selector 'h1', text: '日報の編集'
-  end
-
 end
