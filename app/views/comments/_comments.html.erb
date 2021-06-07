@@ -1,6 +1,6 @@
 <h1><%= Comment.model_name.human %></h1>
 <% commentable.comments.order(:id).each do |comment| %>
-  <div class = comment_container>
+  <div class = "comment_container">
     <%=simple_format comment.body %>
     <p>
       <small>
