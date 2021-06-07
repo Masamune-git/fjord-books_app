@@ -19,6 +19,6 @@
 <% end %>
 
 <%= form_with model: [commentable, commentable.comments.new], local: true do |f| %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, required: true %>
   <%= f.submit t('views.common.create') %>
 <% end %>
