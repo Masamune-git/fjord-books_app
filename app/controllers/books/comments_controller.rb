@@ -5,8 +5,12 @@ class Books::CommentsController < ApplicationController
     book = Book.find(params[:book_id])
     comment = book.comments.build(comment_params)
     comment.user = current_user
-    comment.save
-    redirect_to book_path(book)
+
+    if comment.save
+      redirect_to book_path(book)
+    else
+      redirect_to book_path(book), alert: 'コメントを入力してください'
+    end
   end
 
   private
