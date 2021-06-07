@@ -7,9 +7,9 @@ class Reports::CommentsController < ApplicationController
     comment.user = current_user
 
     if comment.save
-      redirect_to eport_path(report)
+      redirect_to report_path(report)
     else
-      redirect_to eport_path(report), alert: 'コメントを入力してください'
+      redirect_to report_path(report), alert: 'コメントを入力してください'
     end
   end
 
