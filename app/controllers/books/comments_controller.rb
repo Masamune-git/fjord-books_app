@@ -9,7 +9,9 @@ class Books::CommentsController < ApplicationController
     if comment.save
       redirect_to book_path(book)
     else
-      redirect_to book_path(book), alert: 'コメントを入力してください'
+      @book = book
+      flash.now[:alert] = 'コメントを入力してください'
+      render 'books/show'
     end
   end
 

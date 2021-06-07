@@ -5,11 +5,12 @@ class Reports::CommentsController < ApplicationController
     report = Report.find(params[:report_id])
     comment = report.comments.build(comment_params)
     comment.user = current_user
-
     if comment.save
       redirect_to report_path(report)
     else
-      redirect_to report_path(report), alert: 'コメントを入力してください'
+      @report = report
+      flash.now[:alert] = 'コメントを入力してください'
+      render 'reports/show'
     end
   end
 
