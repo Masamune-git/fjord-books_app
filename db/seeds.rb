@@ -73,4 +73,12 @@ User.order(:id).each do |user|
   user.avatar.attach(io: URI.parse(image_url).open, filename: 'avatar.png')
 end
 
+# リレーションシップ
+users = User.all
+user  = users.first
+followings = users[2..50]
+followers = users[3..40]
+followings.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output
