@@ -1,0 +1,24 @@
+<h1><%= Comment.model_name.human %></h1>
+<% commentable.comments.order(:id).each do |comment| %>
+  <div class = "comment_container">
+    <%=simple_format comment.body %>
+    <p>
+      <small>
+        <% if comment.user.name.present? %>
+          <%= t('views.common.contributor') %>:
+          <%= comment.user.name %> |
+        <% else %>
+          <%= t('views.common.contributor_email') %>:
+          <%= comment.user.email %> |
+        <% end %>
+        <%= t('views.common.posted_time') %>:
+        <%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+      </small>
+    </p>
+  </div>
+<% end %>
+
+<%= form_with model: [commentable, commentable.comments.new], local: true do |f| %>
+  <%= f.text_area :body, required: true %>
+  <%= f.submit t('views.common.create') %>
+<% end %>
