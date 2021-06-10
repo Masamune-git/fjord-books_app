@@ -12,7 +12,7 @@ class ReportTest < ActiveSupport::TestCase
   test '#created_on' do
     assert_equal DateTime.current.to_date, @report.created_on
   end
-  
+
   test '#editable?' do
     assert @report.editable?(@alice)
     assert_not @report.editable?(@bob)

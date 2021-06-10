@@ -45,10 +45,13 @@ class BooksTest < ApplicationSystemTestCase
   test 'destroying a Report' do
     visit root_url
     click_on '日報'
+    assert_selector 'h1', text: '日報'
+    assert_text 'アリスの日報'
 
     page.accept_confirm do
       click_link '削除'
     end
     assert_text '日報が削除されました。'
+    assert_no_text 'アリスの日報'
   end
 end
